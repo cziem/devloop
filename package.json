@@ -6,8 +6,15 @@
   "repository": "git@github.com:phavor/devloop.git",
   "author": "Fayvor George <phavorsparks@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "node app.js",
+    "start:dev": "nodemon app.js -ext '.ejs/.css'",
+    "dbon": "sudo systemctl start mongod",
+    "dboff": "sudo systemctl stop mongod"
+  },
   "dependencies": {
     "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "mongoose": "^5.4.5"
