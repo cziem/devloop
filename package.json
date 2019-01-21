@@ -1,0 +1,15 @@
+{
+  "name": "devloop",
+  "version": "1.0.0",
+  "description": "A simple blog site built with NodeJs, Semantic-UI and Mongoose",
+  "main": "app.js",
+  "repository": "git@github.com:phavor/devloop.git",
+  "author": "Fayvor George <phavorsparks@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.5"
+  }
+}
