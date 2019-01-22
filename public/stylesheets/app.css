@@ -16,3 +16,7 @@ i.icon {
 .delete-post {
   display: inline;
 }
+
+.right.chevron.icon {
+  font-size: 1em;
+}
