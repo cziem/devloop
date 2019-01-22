@@ -8,3 +8,7 @@ i.icon {
 .logo {
   cursor: pointer;
 }
+
+.container.main {
+  margin-top: 8.0em;
+}
