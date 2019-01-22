@@ -24,6 +24,9 @@ module.exports = {
   // CREATE BLOG
   createBlog: (req, res) => {
     // Handle form data coming from new blog post page
+    // sanitize
+    req.body.blog.body = req.sanitize(req.body.blog.body)
+
     const post = req.body.blog
     Blog.create(post)
       .then((blog) => {
@@ -64,8 +67,12 @@ module.exports = {
   // UPDATE BLOG
   updateBlog: (req, res) => {
     // update blog details by blog's id
+    // sanitize
+    req.body.blog.body = req.sanitize(req.body.blog.body)
+
     const blogId = req.params.id
-    Blog.findOneAndUpdate(blogId,  {...req.body.blog})
+    const updatedBlog = req.body.blog
+    Blog.findByIdAndUpdate(blogId,  updatedBlog )
       .then(blog => {
         res.redirect(`/blogs/${blogId}`)
       })
@@ -77,8 +84,14 @@ module.exports = {
   // DELETE BLOG
   deleteBlog: (req, res) => {
     // delete a blog post by it's id
-    res.send('deleting a blog post')
-
-    // redirect to /blogs
+    const blogId = req.params.id
+    Blog.findByIdAndDelete(blogId)
+      .then(() => {
+        res.redirect('/blogs')
+      })
+      .catch((err) => {
+        res.redirect('/blogs')
+        console.log(err)
+      })
   }
 }
