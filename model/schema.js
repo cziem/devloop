@@ -11,10 +11,4 @@ const blogSchema = new Schema({
 
 const Blog = mongoose.model('Blog', blogSchema)
 
-Blog.create({
-  title: 'Test Blog',
-  imgUrl: 'https://photosforclass.com/download/flickr-1342367857',
-  body: "this is our test blog"
-})
-
 module.exports = Blog
