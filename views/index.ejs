@@ -2,4 +2,11 @@
 
 <h2>The Blog Page</h2>
 
+<% blogs.forEach(blog => { %>
+  <h2><%= blog.title %></h2>
+  <img src="<%= blog.imgUrl %>" alt="Picture of <%= blog.title %>">
+  <span>Created: <%= blog.createdAt %></span>
+  <p><%- blog.body %></p>
+<% }) %>
+
 <% include partials/footer %>
