@@ -37,7 +37,15 @@ module.exports = {
   // SHOW BLOG
   showBlog: (req, res) => {
     // Show details about a blog using it's id
-    res.send('showing a blog post')
+    const blogId = req.params.id
+    Blog.findById(blogId)
+      .then(blog => {
+        res.render('show', { blog })
+      })
+      .catch(() => {
+        // render Error page later
+        res.redirect('/blogs')
+      })
   },
 
   // EDIT BLOG
