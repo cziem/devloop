@@ -9,7 +9,10 @@ module.exports = {
 
   // INDEX ROUTE
   getBlogs: (req, res) => {
-    res.render('index')
+    Blog.find()
+      .then(blogs => {
+        res.render('index', { blogs })
+      })
   },
 
   // NEW POST FORM
@@ -21,7 +24,14 @@ module.exports = {
   // CREATE BLOG
   createBlog: (req, res) => {
     // Handle form data coming from new blog post page
-    res.send('creating new blog post')
+    const post = req.body.blog
+    Blog.create(post)
+      .then((blog) => {
+        res.redirect('/blogs')
+      })
+      .catch(err => {
+        res.render('new')
+      })
   },
 
   // SHOW BLOG
