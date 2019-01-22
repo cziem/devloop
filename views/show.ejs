@@ -16,7 +16,9 @@
       </div>
     </div>
     <a href="/blogs/<%= blog._id %>/edit" class="ui pink basic button">Edit Post</a>
-    <a href="/blogs/<%= blog._id %>" class="ui pink basic button">Remove Post</a>
+
+    <form class="delete-post" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+      <button class="ui red basic button">Remove Post</button>
   </div>
 </div>
 

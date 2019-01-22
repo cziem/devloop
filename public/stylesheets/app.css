@@ -12,3 +12,7 @@ i.icon {
 .container.main {
   margin-top: 7.0em;
 }
+
+.delete-post {
+  display: inline;
+}
