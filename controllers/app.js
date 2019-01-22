@@ -51,13 +51,27 @@ module.exports = {
   // EDIT BLOG
   editBlog: (req, res) => {
     // Render form for editing a Blog post
-    res.render('edit')
+    const blogId = req.params.id
+    Blog.findById(blogId)
+      .then(blog => {
+        res.render('edit', { blog })
+      })
+      .catch(() => {
+        res.redirect('/blogs')
+      })
   },
 
   // UPDATE BLOG
   updateBlog: (req, res) => {
     // update blog details by blog's id
-    res.send('updating a blog post')
+    const blogId = req.params.id
+    Blog.findOneAndUpdate(blogId,  {...req.body.blog})
+      .then(blog => {
+        res.redirect(`/blogs/${blogId}`)
+      })
+      .catch(() => {
+        res.redirect('/blogs')
+      })
   },
 
   // DELETE BLOG
