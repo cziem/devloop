@@ -6,7 +6,8 @@
   <h2><%= blog.title %></h2>
   <img src="<%= blog.imgUrl %>" alt="Picture of <%= blog.title %>">
   <span>Created: <%= blog.createdAt %></span>
-  <p><%- blog.body.substring(0, 200) %>...</p>
+  <p><%= blog.body.substring(0, 200) %>...</p>
+  <a href="/blogs/<%= blog._id %>" class="ui pink basic button">Read More</a>
 <% }) %>
 
 <% include partials/footer %>
