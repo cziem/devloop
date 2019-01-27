@@ -1,3 +1,4 @@
+require('./config/config')
 const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
@@ -19,15 +20,15 @@ app.use(methodOverride('_method'))
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
-const port = process.env.PORT || 4000
-const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/devloop'
+const port = process.env.PORT
+const uri = process.env.MONGODB_URI
 
 // connect to DB
 mongoose.connect(uri, {
   useCreateIndex: true,
   useNewUrlParser: true
 })
-  .then(() => console.log('successful connection to DB'))
+  .then(() => console.log(`successful connection to DB ${uri}`))
   .catch(err => console.log(`failed attempts to connect to DB! Error: ${err}`))
 
 app.use('/', blogRouter)
