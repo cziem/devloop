@@ -1,0 +1,22 @@
+
+.ui.container-main {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  align-items: center !important;
+  justify-content: center;
+}
+
+.ui.form {
+  width: 100%;
+}
+
+@media (min-height: 320px) {
+  .ui.form-page { 
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+}
