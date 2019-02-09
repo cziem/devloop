@@ -6,6 +6,7 @@ const cors = require('cors')
 const methodOverride = require('method-override')
 const expressSanitizer = require('express-sanitizer')
 const passport = require('passport')
+const flash = require('connect-flash')
 
 const blogRouter = require('./routes/route')
 const usersRouter = require('./routes/userRoute')
@@ -17,6 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(expressSanitizer())
 app.use(methodOverride('_method'))
+app.use(flash())
 app.locals.moment = require('moment')
 
 // Configure Passport
@@ -31,6 +33,17 @@ app.use(passport.session())
 // Set view engine
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
+
+// pass current user to every page and route
+app.use((req, res, next) => {
+  res.locals.currentUser = req.user
+  res.locals.error = req.flash("error")
+  res.locals.warn = req.flash("warn")
+  res.locals.success = req.flash("success")
+  next()
+})
+
+
 
 const port = process.env.PORT
 const uri = process.env.MONGODB_URI
