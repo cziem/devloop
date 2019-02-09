@@ -29,24 +29,20 @@ module.exports = {
       try {
         let admin = await User.register(newAdmin, password)
         passport.authenticate('local')(req, res, () => {
-          res.json({
-            admin,
-            status: 200
-          })
-          res.render('user/dashboard', admin)
+          res.render('users/dashboard', admin)
         })
       } catch (error) {
-        res.send(`Sorry new Admin ${req.body.username}, could not be registered...`)
+        res.send(`${req.body.username}, ${error._message}`)
         console.log(error)
       }
     } else {
       const err = {
         status: 401,
-        message: `You have no authorized passcode for this operation. Contact devloops admin <a href="mailto:help@devloops.com">here</a>`
+        // message: `You have no authorized passcode for this operation. Contact devloops admin <a href="mailto:help@devloops.com">here</a>`
+        message: `You have no authorized passcode for this operation. Contact devloops admin for help`
       }
       req.flash('error', err.message)
       res.render('users/admin')
     }
-
   }
 }
