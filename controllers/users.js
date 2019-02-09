@@ -40,12 +40,12 @@ module.exports = {
         console.log(error)
       }
     } else {
-      console.log('You dont have admin code')
       const err = {
         status: 401,
         message: `You have no authorized passcode for this operation. Contact devloops admin <a href="mailto:help@devloops.com">here</a>`
       }
-      res.render('users/admin', { err })
+      req.flash('error', err.message)
+      res.render('users/admin')
     }
 
   }
