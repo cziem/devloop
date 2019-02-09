@@ -1,7 +1,8 @@
 
 .ui.container-main {
   display: flex;
-  height: 100%;
+  padding-top: .5em;
+  height: auto;
   width: 100%;
   flex-direction: column;
   align-items: center !important;
@@ -19,4 +20,11 @@
     width: 100%;
     text-align: center;
   }
+}
+
+/* Flash Messages */
+.flash {
+  width: 70%;
+  margin: .5em auto;
+  text-align: center;
 }
