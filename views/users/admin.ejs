@@ -4,7 +4,7 @@
 <div class="ui container-main">
   <div class="ui raised very padded middle aligned center aligned grid">
     <h2 class="ui text pink header">Register Admin</h2>
-    <form class="ui form container segment">
+    <form action="/users/admin" method="POST" class="ui form container segment">
       <div class="field">
         <label>Username</label>
         <input type="text" name="username" placeholder="username">
@@ -19,7 +19,7 @@
       </div>
       <div class="field">
         <label>Admin Code</label>
-        <input type="text" name="adminCode" placeholder="Enter Admin PassCode">
+        <input type="password" name="adminCode" placeholder="Enter Admin PassCode">
       </div>
       <button class="ui pink basic button" type="submit">Submit</button>
       <div class="ui error message">
