@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const methodOverride = require('method-override')
 const expressSanitizer = require('express-sanitizer')
+const passport = require('passport')
 
 const blogRouter = require('./routes/route')
 const usersRouter = require('./routes/userRoute')
@@ -16,6 +17,16 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(expressSanitizer())
 app.use(methodOverride('_method'))
+app.locals.moment = require('moment')
+
+// Configure Passport
+app.use(require('express-session')({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false
+}))
+app.use(passport.initialize())
+app.use(passport.session())
 
 // Set view engine
 app.set('view engine', 'ejs')
@@ -27,7 +38,8 @@ const uri = process.env.MONGODB_URI
 // connect to DB
 mongoose.connect(uri, {
   useCreateIndex: true,
-  useNewUrlParser: true
+  useNewUrlParser: true,
+  useFindAndModify: false
 })
   .then(() => console.log(`successful connection to DB ${uri}`))
   .catch(err => console.log(`failed attempts to connect to DB! Error: ${err}`))
@@ -35,4 +47,4 @@ mongoose.connect(uri, {
 app.use('/', blogRouter)
 app.use('/users', usersRouter)
 
-app.listen(port, () => console.log(`application running at localhost://${port}`))
+app.listen(port, () => console.log(`application running at http://localhost:${port}`))
