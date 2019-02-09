@@ -1,18 +1,38 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="/stylesheets/admin.css">
 
-<form class="ui form">
-  <div class="field">
-    <label>First Name</label>
-    <input type="text" name="first-name" placeholder="First Name">
+<div class="ui container-main">
+  <div class="ui raised very padded middle aligned center aligned grid">
+    <h2 class="ui text pink header">Register Admin</h2>
+    <form class="ui form container segment">
+      <div class="field">
+        <label>Username</label>
+        <input type="text" name="username" placeholder="username">
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="name@admin.com">
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" name="password" placeholder="password">
+      </div>
+      <div class="field">
+        <label>Admin Code</label>
+        <input type="text" name="adminCode" placeholder="Enter Admin PassCode">
+      </div>
+      <button class="ui pink basic button" type="submit">Submit</button>
+      <div class="ui error message">
+    </form>
   </div>
-  <div class="field">
-    <label>Last Name</label>
-    <input type="text" name="last-name" placeholder="Last Name">
-  </div>
-  <div class="field">
-    <div class="ui checkbox">
-      <input type="checkbox" tabindex="0" class="hidden">
-      <label>I agree to the Terms and Conditions</label>
+
+  <div class="ui vertical footer segment form-page">
+    <div class="ui container">
+      Devloops 2019. All Rights Reserved
     </div>
   </div>
-  <button class="ui button" type="submit">Submit</button>
-</form>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+<script src="/js/form-validate.js"></script>
