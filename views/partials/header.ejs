@@ -21,3 +21,24 @@
       <a href="/blogs/new" class="item">New Post</a>
     </div>
   </div>
+
+  <div class="container flash">
+      <% if (error && error.length > 0) { %>
+        <div class="ui negative message">
+          <i class="close icon"></i>
+          <%= error %>
+        </div>
+      <% } %>
+      <% if (warn && warn.length > 0) { %>
+        <div class="ui warning message">
+          <i class="close icon"></i>
+          <%= warn %>
+        </div>
+      <% } %>
+      <% if (success && success.length > 0) { %>
+        <div class="ui positive message">
+          <i class="close icon"></i>
+          <%= success %>
+        </div>
+      <% } %>
+  </div>
