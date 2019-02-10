@@ -18,12 +18,15 @@
         devloops
       </div>
       <a href="/" class="item">Home</a>
-      <a href="/blogs/new" class="item">New Post</a>
+      
+      <% if (currentUser && currentUser.isAdmin) { %>
+        <a href="/blogs/new" class="item">New Post</a>
 
-      <div class="right menu">
-        <% console.log(currentUser) %>
-        <a href="/admin/logout" class="ui item">Logout</a>
-      </div>
+        <div class="right menu">
+          <a href="#" class="ui grey item">Admin, <strong><%= currentUser.username %></strong></a>
+          <a href="/admin/logout" class="ui item">Logout</a>
+        </div>
+      <% } %>
     </div>
   </div>
 
