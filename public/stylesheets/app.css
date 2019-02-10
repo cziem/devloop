@@ -1,6 +1,6 @@
 
 
-i.icon {
+.logo i.icon {
   font-size: 2em;
   color: #c53ba1;
 }
@@ -28,4 +28,14 @@ i.icon {
     width: 100%;
     text-align: center;
   }
+}
+
+/* Flash Messages */
+.flash {
+  width: 70%;
+  /* margin: 0 auto; */
+  text-align: center;
+  position: absolute;
+  top: 5em;
+  left: 16%;
 }
