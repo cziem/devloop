@@ -62,5 +62,12 @@ module.exports = {
     successFlash: 'Successfully logged into admin account',
     failureRedirect: '/admin',
     failureFlash: 'Invalid credentials! Contact admin'
-  })
+  }),
+
+  // logout Admin
+  logout: (req, res) => {
+    req.logout()
+    req.flash('success', `See you soon...`)
+    res.redirect('/blogs')
+  },
 }
