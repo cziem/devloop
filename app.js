@@ -9,7 +9,7 @@ const passport = require('passport')
 const flash = require('connect-flash')
 
 const blogRouter = require('./routes/route')
-const usersRouter = require('./routes/userRoute')
+const adminRouter = require('./routes/adminRoute')
 
 const app = express()
 
@@ -58,6 +58,6 @@ mongoose.connect(uri, {
   .catch(err => console.log(`failed attempts to connect to DB! Error: ${err}`))
 
 app.use('/', blogRouter)
-app.use('/users', usersRouter)
+app.use('/admin', adminRouter)
 
 app.listen(port, () => console.log(`application running at http://localhost:${port}`))

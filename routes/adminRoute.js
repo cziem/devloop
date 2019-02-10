@@ -4,15 +4,15 @@ const router = express.Router();
 const controller = require("../controllers/users");
 
 // Get the Admin Login Form
-router.get('/admin', controller.AdminLogin)
-
-// Get the Admin Register Form
-router.get('/admin/new', controller.AdminRegister)
-
-// Handle Admin Registration
-router.post('/admin/new', controller.adminReg)
+router.get('/', controller.AdminLogin)
 
 // Handle Admin Login
-router.post('/admin', controller.loginAdmin)
+router.post('/', controller.loginAdmin)
+
+// Get the Admin Register Form
+router.get('/new', controller.AdminRegister)
+
+// Handle Admin Registration
+router.post('/new', controller.adminReg)
 
 module.exports = router
