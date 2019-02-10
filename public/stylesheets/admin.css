@@ -12,12 +12,25 @@
   width: 100%;
 }
 
+.ui.raised.very.padded {
+  width: 30%;
+}
+
 @media (min-height: 320px) {
   .ui.form-page { 
     position: absolute;
     bottom: 0;
     width: 100%;
     text-align: center;
+  }
+}
+
+@media (max-width: 648px) {
+  .ui.raised.very.padded {
+    width: 50%;
+  }
+  .ui.form {
+    width: 100% !important;
   }
 }
 
