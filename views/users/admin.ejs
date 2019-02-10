@@ -3,7 +3,7 @@
 <div class="ui container-main">
   <div class="ui raised very padded middle aligned center aligned grid">
     <h2 class="ui text pink header">Register Admin</h2>
-    <form action="/users/admin" method="POST" class="ui form container segment">
+    <form action="/users/admin" method="POST" class="ui form container stacked segment">
       <div class="field">
         <label>Username</label>
         <input type="text" name="username" placeholder="username" autoFocus>
@@ -23,6 +23,10 @@
       <button class="ui pink basic button" type="submit">Submit</button>
       <div class="ui error message">
     </form>
+  </div>
+
+  <div class="ui message">
+    Already have an account? <a href="/users/admin">Login</a>
   </div>
 
   <div class="ui vertical footer segment form-page">
