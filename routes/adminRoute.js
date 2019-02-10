@@ -15,4 +15,7 @@ router.get('/new', controller.AdminRegister)
 // Handle Admin Registration
 router.post('/new', controller.adminReg)
 
+// Render Dashboard
+router.get('/dashboard', controller.dashboard)
+
 module.exports = router

@@ -51,8 +51,16 @@ module.exports = {
     }
   },
 
+  // Show dashboard
+  dashboard: (req, res) => {
+    res.render('users/dashboard')
+  },
+
   // Handle Admin Login
-  loginAdmin: (req, res) => {
-    res.render('users/adminLogin')
-  }
+  loginAdmin: passport.authenticate('local', {
+    successRedirect: '/admin/dashboard',
+    successFlash: 'Successfully logged into admin account',
+    failureRedirect: '/admin',
+    failureFlash: 'Invalid credentials! Contact admin'
+  })
 }
