@@ -11,6 +11,11 @@ passport.deserializeUser(User.deserializeUser())
 module.exports = {
   // Get Admin Login Page
   AdminLogin: (req, res) => {
+    res.render('users/adminLogin')
+  },
+
+  // Get Admin Registration Page
+  AdminRegister: (req, res) => {
     res.render('users/admin')
   },
 
@@ -44,5 +49,10 @@ module.exports = {
       req.flash('error', err.message)
       res.render('users/admin')
     }
+  },
+
+  // Handle Admin Login
+  loginAdmin: (req, res) => {
+    res.render('users/adminLogin')
   }
 }
