@@ -27,12 +27,20 @@ module.exports = {
     // sanitize
     req.body.blog.body = req.sanitize(req.body.blog.body)
 
+    const author = {
+      id: req.user._id,
+      username: req.user.username
+    }
+
     const post = req.body.blog
+    post.author = author
+    
     Blog.create(post)
       .then((blog) => {
         res.redirect('/blogs')
       })
       .catch(err => {
+        req.flash('error', 'Could not create your post!')
         res.render('new')
       })
   },
