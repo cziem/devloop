@@ -8,7 +8,7 @@
       <img class="ui centered rounded image" src="<%= blog.imgUrl %>" alt="Picture of <%= blog.title %>">
 
       <div class="content">
-        <span>Created: <%= blog.createdAt.toDateString() %></span>
+        <span>Created: <%= moment(blog.createdAt).fromNow() %></span>
       </div>
 
       <div class="description">

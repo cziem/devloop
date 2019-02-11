@@ -15,10 +15,10 @@
           <div class="content">
             <a href="/blogs/<%= blog._id %>" class="header"><%= blog.title %></a>
             <div class="meta">
-              <span>Created: <%= blog.createdAt.toDateString() %></span>
+              <span>Created: <%= moment(blog.createdAt).fromNow() %></span>
             </div>
             <div class="description">
-              <p><%- blog.body.substring(0, 200) %>...</p>
+              <p><%= blog.body.substring(0, 200) %>...</p>
             </div>
             <div class="extra">
               <a href="/blogs/<%= blog._id %>" class="ui floated pink basic button">Read More
