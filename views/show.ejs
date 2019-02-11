@@ -8,17 +8,20 @@
       <img class="ui centered rounded image" src="<%= blog.imgUrl %>" alt="Picture of <%= blog.title %>">
 
       <div class="content">
-        <span>Created: <%= moment(blog.createdAt).fromNow() %></span>
+        <span><strong><%= blog.author.username %></strong>, <%= moment(blog.createdAt).fromNow() %></span>
       </div>
 
       <div class="description">
         <p><%- blog.body %></p>
       </div>
     </div>
-    <a href="/blogs/<%= blog._id %>/edit" class="ui pink basic button">Edit Post</a>
 
-    <form class="delete-post" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
-      <button class="ui red basic button">Remove Post</button>
+    <% if (currentUser && blog.author.id.equals(currentUser._id)) { %>
+      <a href="/blogs/<%= blog._id %>/edit" class="ui pink basic button">Edit Post</a>
+      <form class="delete-post" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+        <button class="ui red basic button">Remove Post</button>
+      </form>
+    <% } %>
   </div>
 </div>
 

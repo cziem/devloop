@@ -15,7 +15,7 @@
           <div class="content">
             <a href="/blogs/<%= blog._id %>" class="header"><%= blog.title %></a>
             <div class="meta">
-              <span>Created: <%= moment(blog.createdAt).fromNow() %></span>
+              <span><strong><%= blog.author.username %></strong>, <%= moment(blog.createdAt).fromNow() %></span>
             </div>
             <div class="description">
               <p><%= blog.body.substring(0, 200) %>...</p>
