@@ -1,4 +1,6 @@
-
+body {
+  height: auto !important;
+}
 
 .logo i.icon {
   font-size: 2em;
@@ -21,13 +23,18 @@
   font-size: 1em;
 }
 
-@media (min-height: 320px) {
+/* @media (min-height: 320px) {
   .ui.form-page { 
     position: absolute;
     bottom: 0;
     width: 100%;
     text-align: center;
   }
+} */
+
+.ui.footer .ui.container {
+  text-align: center;
+  margin-top: 2em;
 }
 
 /* Flash Messages */
