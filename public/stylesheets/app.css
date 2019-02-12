@@ -93,6 +93,16 @@ span.right.floated.cta.meta span:hover .comment.icon {
   padding-left: 1.2em;
 }
 
+.ui.segment .ui.pink.basic.button:hover {
+  background: #e8518d !important;
+  color: white !important;
+}
+
+.ui.segment .ui.red.basic.button:hover {
+  background: #db3c29 !important;
+  color: white !important;
+}
+
 /* MEDIA QUERY */
 @media (max-width: 990px) {
   .ui.vertical.cta {
