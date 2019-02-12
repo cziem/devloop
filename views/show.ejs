@@ -1,18 +1,66 @@
 <% include partials/header %>
 
-<div class="ui main container text segment">
-  <div class="ui huge header"><%= blog.title %></div>
-
-  <div class="ui top attached">
-    <div class="item">
-      <img class="ui centered rounded image" src="<%= blog.imgUrl %>" alt="Picture of <%= blog.title %>">
-
+<div class="ui two column doubling stackable grid container main">
+  <div class="ui vertical cta">
+    <button class="ui circular red icon button">
+      <i class="heart like icon"></i>
+    </button>
+    <button class="ui circular facebook icon button">
+      <i class="facebook icon"></i>
+    </button>
+    <button class="ui circular twitter icon button">
+      <i class="twitter icon"></i>
+    </button>
+    <button class="ui circular linkedin icon button">
+      <i class="linkedin icon"></i>
+    </button>
+  </div>
+  
+  <div class="ui container text stacked segments show-page">
+    <div class="ui segment cover-image">
+      <img class="ui centered image" src="<%= blog.imgUrl %>" alt="Picture of <%= blog.title %>">
+    </div>
+  
+    <div class="ui segment">
+      <div class="ui huge header"><%= blog.title %></div>
+      
       <div class="content">
-        <span><strong><%= blog.author.username %></strong>, <%= moment(blog.createdAt).fromNow() %></span>
+        <span class="cta meta">
+          <i class="user icon"></i>
+          <strong>
+            <% if (currentUser && currentUser.name) { %>
+              <%= currentUser.name %></strong>, 
+            <% } else { %>
+              <%= blog.author.username %></strong>,
+            <% } %>
+          <%= moment(blog.createdAt).fromNow() %>
+        </span>
       </div>
-
+    </div>
+    
+    <div class="ui segment">
       <div class="description">
         <p><%- blog.body %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="ui main container text stacked segments show-page">
+  <div class="ui top attached">
+    <div class="item">
+      <img class="ui centered image" src="<%= blog.imgUrl %>" alt="Picture of <%= blog.title %>">
+
+      <div class="ui segment">
+        <div class="ui huge header"><%= blog.title %></div>
+
+        <div class="content">
+          <span><strong><%= blog.author.username %></strong>, <%= moment(blog.createdAt).fromNow() %></span>
+        </div>
+
+        <div class="description">
+          <p><%- blog.body %></p>
+        </div>
       </div>
     </div>
 
@@ -23,6 +71,6 @@
       </form>
     <% } %>
   </div>
-</div>
+</div> -->
 
 <% include partials/footer %>

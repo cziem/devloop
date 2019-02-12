@@ -46,3 +46,34 @@ body {
   top: 5em;
   left: 16%;
 }
+
+/* SHOW PAGE */
+img.ui.centered.image {
+  width: 100%;
+}
+
+.cover-image {
+  padding: 0 !important;
+}
+
+.cta.meta {
+  color: #8e8e8e;
+}
+
+.description {
+  font-size: 1.1em;
+}
+
+.description p {
+  line-height: 1.69;
+}
+
+.ui.vertical.cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 15em;
+  margin-top: 5em;
+  padding-left: 2em;
+  position: fixed;
+}
