@@ -27,13 +27,22 @@
       <div class="content">
         <span class="cta meta">
           <i class="user icon"></i>
-          <strong>
             <% if (currentUser && currentUser.name) { %>
-              <%= currentUser.name %></strong>, 
+              <strong><%= currentUser.name %></strong>, 
             <% } else { %>
-              <%= blog.author.username %></strong>,
+              <strong><%= blog.author.username %></strong>,
             <% } %>
           <%= moment(blog.createdAt).fromNow() %>
+        </span>
+        <span class="right floated cta meta">
+          <span>
+            <i class="heart like icon"></i>
+            17 likes
+          </span>
+          <span class="likes-rating">
+            <i class="comment icon"></i>
+            3 comments
+          </span>
         </span>
       </div>
     </div>
