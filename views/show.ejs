@@ -56,8 +56,8 @@
     <% if (currentUser && blog.author.id.equals(currentUser._id)) { %>
       <div class="ui segment">
         <a href="/blogs/<%= blog._id %>/edit" class="ui pink basic button">Edit Post</a>
-        <form class="delete-post" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
-          <button class="ui red basic button">Remove Post</button>
+        <form class="delete-post" action="" method="">
+          <button class="ui red basic button" id="deletePost">Remove Post</button>
         </form>
       </div>
     <% } %>
@@ -158,31 +158,26 @@
   </div>
 </div>
 
-<!-- <div class="ui main container text stacked segments show-page">
-  <div class="ui top attached">
-    <div class="item">
-      <img class="ui centered image" src="<%= blog.imgUrl %>" alt="Picture of <%= blog.title %>">
-
-      <div class="ui segment">
-        <div class="ui huge header"><%= blog.title %></div>
-
-        <div class="content">
-          <span><strong><%= blog.author.username %></strong>, <%= moment(blog.createdAt).fromNow() %></span>
-        </div>
-
-        <div class="description">
-          <p><%- blog.body %></p>
-        </div>
-      </div>
-    </div>
-
-    <% if (currentUser && blog.author.id.equals(currentUser._id)) { %>
-      <a href="/blogs/<%= blog._id %>/edit" class="ui pink basic button">Edit Post</a>
-      <form class="delete-post" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
-        <button class="ui red basic button">Remove Post</button>
-      </form>
-    <% } %>
+<div class="ui small basic test modal">
+  <div class="ui icon header">
+    <i class="archive icon"></i>
+    <%= blog.title %>
   </div>
-</div> -->
+
+  <div class="content">
+    <p>
+      Are you sure you want to delete this post?
+    </p>
+  </div>
+
+  <div class="actions">
+    <div class="ui red basic cancel inverted button">
+      <i class="remove icon"></i>No
+    </div>
+    <div class="ui green ok inverted button">
+      <i class="checkmark icon"></i>Yes
+    </div>
+  </div>
+</div>
 
 <% include partials/footer %>
