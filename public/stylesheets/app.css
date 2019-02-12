@@ -77,3 +77,7 @@ img.ui.centered.image {
   padding-left: 2em;
   position: fixed;
 }
+
+.ui.grid > .show-page {
+  padding: 0;
+}
