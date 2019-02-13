@@ -95,6 +95,8 @@ module.exports = {
     const blogId = req.params.id
     Blog.findByIdAndDelete(blogId)
       .then(() => {
+        console.log('Blog is deleted...')
+        res.status(200)
         res.redirect('/blogs')
       })
       .catch((err) => {

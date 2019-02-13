@@ -7,6 +7,10 @@ $('document').ready(() => {
     $('.flash').hide(100)
   }, 5000);
 
+  let blogId = window.location.pathname.split('/')[2]
+  let url = '/blogs/' + blogId
+  console.log(url)
+
   $('#deletePost').click((event) => {
     event.preventDefault()
     $('.ui.modal')
@@ -16,9 +20,16 @@ $('document').ready(() => {
           return
         },
         onApprove: () => {
-          $.ajax({
-            url: ''
-          })
+          // axios.delete(`/blogs/${blogId}`)
+          //   .then(res => console.log(res))
+          // $.ajax({
+          //   url: `/blogs/${blogId}?_method=DELETE`,
+          //   // type: 'DELETE',
+          //   // success: function(response) {
+          //   //   console.log(response)
+          //   //   return true
+          //   // }
+          // })
         }
       })
       .modal('show')
