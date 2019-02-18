@@ -9,7 +9,9 @@ module.exports = {
 
   // INDEX ROUTE
   getBlogs: (req, res) => {
-    Blog.find()
+    Blog
+      .find()
+      .sort({ createdAt: -1 })
       .then(blogs => {
         res.render('index', { blogs })
       })
@@ -94,14 +96,11 @@ module.exports = {
     // delete a blog post by it's id
     const blogId = req.params.id
     Blog.findByIdAndDelete(blogId)
-      .then(() => {
-        console.log('Blog is deleted...')
-        res.status(200)
-        res.redirect('/blogs')
+      .then((data) => {
+        res.json(data)
       })
       .catch((err) => {
         res.redirect('/blogs')
-        console.log(err)
       })
   }
 }
