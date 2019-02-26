@@ -24,6 +24,17 @@
               <a href="/blogs/<%= blog._id %>" class="ui floated pink basic button">Read More
                 <i class="right chevron icon"></i>
               </a>
+
+              <span id="home-cta" class="right floated cta meta">
+                <span id="likes">
+                  <i class="heart like icon"></i>
+                  <span id="like-count"><%= blog.likes %></span> likes
+                </span>
+                <a class="likes-rating" href='/blogs/<%= blog._id%>#disqus_thread'>
+                  <i class="comment icon"></i>
+                  comments
+                </a>
+              </span>
             </div>
           </div>
         </div>
@@ -32,4 +43,5 @@
   </div>
 </div>
 
+<script id="dsq-count-scr" src="//devloops.disqus.com/count.js" async></script>
 <% include partials/footer %>

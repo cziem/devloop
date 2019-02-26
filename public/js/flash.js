@@ -31,6 +31,10 @@ $("document").ready(() => {
       .modal("show");
   });
 
+  $(".header.item.logo").click(() => {
+    location.replace("/");
+  });
+
   $("#likes").click(event => {
     event.preventDefault();
     let blogId = window.location.pathname.split("/")[2];
