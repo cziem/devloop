@@ -116,6 +116,15 @@ span.right.floated.cta.meta span:hover .comment.icon {
   text-align: center;
 }
 
+@media (min-height: 320px) {
+  .ui.homepage {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
 /* MEDIA QUERY */
 @media (max-width: 990px) {
   .ui.vertical.cta {
