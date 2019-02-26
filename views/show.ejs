@@ -35,9 +35,9 @@
           <%= moment(blog.createdAt).fromNow() %>
         </span>
         <span class="right floated cta meta">
-          <span>
+          <span id="likes">
             <i class="heart like icon"></i>
-            17 likes
+            <span id="like-count"><%= blog.likes %></span> likes
           </span>
           <a class="likes-rating" href='/blogs/<%= blog._id%>#disqus_thread'>
             <i class="comment icon"></i>
@@ -113,8 +113,8 @@
   (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
       var d = document, s = d.createElement('script');
       
-      // s.src = 'http://localhost-devloop.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
-      s.src = 'https://devloops.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+      s.src = 'http://localhost-devloop.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+      // s.src = 'https://devloops.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
       
       s.setAttribute('data-timestamp', +new Date());
       (d.head || d.body).appendChild(s);
