@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 const blogSchema = new Schema({
   title: { type: String, required: true },
@@ -9,12 +9,13 @@ const blogSchema = new Schema({
   author: {
     id: {
       type: Schema.Types.ObjectId,
-      ref: 'User'
+      ref: "User"
     },
     username: String
-  }
-})
+  },
+  likes: Number
+});
 
-const Blog = mongoose.model('Blog', blogSchema)
+const Blog = mongoose.model("Blog", blogSchema);
 
-module.exports = Blog
+module.exports = Blog;
